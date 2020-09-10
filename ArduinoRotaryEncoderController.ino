@@ -24,7 +24,6 @@
 #define inputDT 2
 #define inputSW 3
 
-int counter = 0; 
 int currentStateCLK;
 int previousStateCLK; 
 
