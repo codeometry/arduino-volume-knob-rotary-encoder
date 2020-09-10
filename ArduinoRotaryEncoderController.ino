@@ -20,9 +20,9 @@
 #include <HID-Project.h>
 
 // Rotary Encoder Inputs
-#define inputCLK 4
-#define inputDT 5
-#define inputSW 6
+#define inputCLK 1
+#define inputDT 2
+#define inputSW 3
 
 int counter = 0; 
 int currentStateCLK;
@@ -52,11 +52,21 @@ void loop() {
 		// If the inputDT state is different than the inputCLK state then 
 		// the encoder is rotating counterclockwise
 		if (digitalRead(inputDT) != currentStateCLK) { 
-			Consumer.write(MEDIA_VOLUME_UP);
+			rotateRight();
 		} else {
-			Consumer.write(MEDIA_VOLUME_DOWN);
+			rotateLeft();
 		}
 	} 
 	// Update previousStateCLK with the current state
 	previousStateCLK = currentStateCLK; 
+}
+
+void rotateRight() {
+	// Increase the volume.
+	Consumer.write(MEDIA_VOLUME_UP);  
+}
+
+void rotateLeft() {
+	// Increase the volume.
+	Consumer.write(MEDIA_VOLUME_DOWN);
 }
