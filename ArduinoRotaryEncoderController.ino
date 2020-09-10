@@ -36,6 +36,7 @@ void setup() {
 	// Setup Serial Monitor
 	Serial.begin (9600);
 	Consumer.begin();
+	Keyboard.begin();
 
 	// Read the initial state of inputCLK
 	// Assign to previousStateCLK variable
