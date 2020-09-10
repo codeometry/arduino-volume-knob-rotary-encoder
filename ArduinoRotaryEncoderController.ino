@@ -67,6 +67,6 @@ void rotateRight() {
 }
 
 void rotateLeft() {
-	// Increase the volume.
+	// Decrease the volume.
 	Consumer.write(MEDIA_VOLUME_DOWN);
 }
